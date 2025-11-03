@@ -21,7 +21,7 @@ def get_power_consumption(from_timestamp: Optional[int] = Query(default=None, al
         {k: v for k, v in doc.items() if k not in {'_id'}}
         for doc in data
     ]
-    return {'power_consumption': result}
+    return {'data': result}
 
 if __name__ == '__main__':
     uvicorn.run(app, host='0.0.0.0', port=9000)
