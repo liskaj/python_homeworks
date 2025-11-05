@@ -13,6 +13,8 @@ Struktura:
 ### Importer
 Kontejner obsahuje skript pro načtení dat ze souboru [pwr_consumption.csv](./data/pwr_consumption.csv). Soubor obsahuje informace o spotřebě energie z portalů ČEZ Distribuce.
 
+Skript je automaticky spuštěn při spuštění kontejneru.
+
 ### API
 Kontejner obsahuje REST Server, který umožňuje přistupovat k datům v databázi prostřednictvím REST API:
 
@@ -34,6 +36,6 @@ Pro ukončení použijte:
 `docker-componse down`
 
 ## Poznámky
-1. Je třeba nainstalovat poslední aktualizaci pro Docker a WSL.
+1. V případě problémů s přístupem k databází je třeba nainstalovat poslední aktualizaci pro Docker a WSL.
 2. V případě změn je potřeba znovu vyztvořit kontejner příkazem `build`:
    `docker-componse build <<název kontejneru>>`
