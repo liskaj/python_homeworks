@@ -10,8 +10,15 @@ Struktura:
 - energy - databáze
   - power_consumption - kolekce
 
+
+#### Přístup k databází
+Přístup k databázi je možný prostřednictví URI:
+```
+mongodb://localhost:27017/
+```
+
 ### Importer
-Kontejner obsahuje skript pro načtení dat ze souboru [pwr_consumption.csv](./data/pwr_consumption.csv). Soubor obsahuje informace o spotřebě energie z portalů ČEZ Distribuce.
+Kontejner obsahuje skript pro načtení dat ze souboru [pwr_consumption.csv](./data/pwr_consumption.csv). Soubor obsahuje informace o spotřebě energie z port8lu ČEZ Distribuce.
 
 Skript je automaticky spuštěn při spuštění kontejneru.
 
