@@ -28,14 +28,16 @@ Kontejner obsahuje REST Server, který umožňuje přistupovat k datům v datab�
 
 ## Spuštění
 Pro spuštění použijte následující příkaz:
-`docker-componse up -d`
+`docker-compose up -d`
 
 Přikaz postupně spustí všechny tři kontejnery na pozadí.
 
 Pro ukončení použijte:
-`docker-componse down`
+`docker-compose down`
 
 ## Poznámky
-1. V případě problémů s přístupem k databází je třeba nainstalovat poslední aktualizaci pro Docker a WSL.
+1. V případě problémů s přístupem k databází z prostředí host počítače je třeba:
+  - nainstalovat poslední aktualizaci pro Docker a WSL
+  - zkontrolovat nastavení portu ve Windows firewallu
 2. V případě změn je potřeba znovu vyztvořit kontejner příkazem `build`:
-   `docker-componse build <<název kontejneru>>`
+   `docker-compose build <<název kontejneru>>`
