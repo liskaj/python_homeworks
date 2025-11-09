@@ -1,0 +1,42 @@
+services:
+  mongodb:
+    image: mongo:latest
+    container_name: mongo
+    restart: unless-stopped
+    networks:
+      - app-net
+    ports:
+      - "127.0.0.1:27017:27017"
+    volumes:
+      - mongodb:/data/db
+    command: ["mongod", "--bind_ip_all"]
+
+  api:
+    build: ./api
+    container_name: api
+    depends_on: [mongodb]
+    ports: 
+      - "8000:8000"
+    networks:
+      - app-net
+    environment:
+      - MONGO_URI=mongodb://mongo:27017
+
+  importer:
+    build: ./importer
+    container_name: importer
+    depends_on: [mongodb]
+    environment:
+      - MONGO_URI=mongodb://mongo:27017
+    volumes:
+      - ./data:/data
+    networks:
+      - app-net
+    
+networks:
+  app-net:
+    name: app-net
+
+volumes:
+  mongodb:
+    name: mongodb
